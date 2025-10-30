@@ -1,4 +1,4 @@
-module github.com/mdlayher/taskstats
+module github.com/gustavo-iniguez-goya/taskstats
 
 go 1.22
 
