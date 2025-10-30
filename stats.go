@@ -13,6 +13,14 @@ type CGroupStats struct {
 
 // Stats contains statistics for an individual task.
 type Stats struct {
+	Comm                [32]int8
+	UID                 uint32
+	GID                 uint32
+	PID                 uint32
+	PPID                uint32
+	TGID                uint32
+	ExeDev              uint64
+	ExeInode            uint64
 	BeginTime           time.Time
 	ElapsedTime         time.Duration
 	UserCPUTime         time.Duration

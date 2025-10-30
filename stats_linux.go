@@ -24,6 +24,14 @@ func parseCGroupStats(cs unix.CGroupStats) (*CGroupStats, error) {
 // parseStats parses a raw taskstats structure into a cleaner form.
 func parseStats(ts unix.Taskstats) (*Stats, error) {
 	stats := &Stats{
+		Comm:                ts.Ac_comm,
+		UID:                 ts.Ac_uid,
+		GID:                 ts.Ac_gid,
+		PID:                 ts.Ac_pid,
+		PPID:                ts.Ac_ppid,
+		TGID:                ts.Ac_tgid,
+		ExeDev:              ts.Ac_exe_dev,
+		ExeInode:            ts.Ac_exe_inode,
 		BeginTime:           time.Unix(int64(ts.Ac_btime), 0),
 		ElapsedTime:         microseconds(ts.Ac_etime),
 		UserCPUTime:         microseconds(ts.Ac_utime),
