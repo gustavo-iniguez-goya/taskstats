@@ -1,4 +1,4 @@
-//go:build linux && !arm
+//go:build linux && arm
 
 package taskstats
 
@@ -15,7 +15,8 @@ type CGroupStats struct {
 
 // Stats contains statistics for an individual task.
 type Stats struct {
-	Comm                [32]int8
+	// on arm this field is defined as uint8
+	Comm                [32]uint8
 	UID                 uint32
 	GID                 uint32
 	PID                 uint32
