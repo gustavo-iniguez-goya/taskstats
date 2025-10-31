@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/mdlayher/taskstats"
+	"github.com/gustavo-iniguez-goya/taskstats"
 )
 
 func TestLinuxClientIntegration(t *testing.T) {
